@@ -1,63 +1,63 @@
 # Softwareeng_project
 Project for software engeneering
-# 📚 StudySync — Intelligente Lern-App mit Kalenderintegration
+# StudySync — Intelligente Lern-App mit Kalenderintegration
 
 > Dein persönlicher Lernplaner, der weiß wann du Zeit hast und wie viel du noch brauchst.
 
 ---
 
-## 🎯 Projektübersicht
+## Projektübersicht
 
 StudySync ist eine Lern-App, die deinen Kalender analysiert und automatisch optimale Lernzeiten plant. Sie berücksichtigt deine Prüfungsdaten, deinen aktuellen Lernfortschritt und dein persönliches Lerntempo — und erstellt daraus einen realistischen, individuellen Lernplan.
 
 ---
 
-## ✨ Features
+## Features
 
-### 📅 Kalenderintegration
+### Kalenderintegration
 - Verbindung mit Google Calendar & Apple Calendar
 - Automatische Erkennung freier Zeitfenster
 - Lernblöcke werden direkt in den Kalender eingetragen
 - Bearbeitung und Verschieben von Sessions möglich
 
-### 📊 Lernplanung
+### Lernplanung
 - Prüfungsdaten & Deadlines erfassen
 - Automatische Zeitschätzung pro Fach
 - Smarte Sessions: schwere Themen in energiereiche Zeiten legen
 - Persönliches Lerntempo wird über die Zeit erkannt und angepasst
 
-### 📈 Fortschrittsanzeige
+### Fortschrittsanzeige
 - Fortschrittsbalken pro Fach (0–100%)
 - Übersicht bereits erledigter Aufgaben
 - Wochenrecap: geplante vs. tatsächliche Lernzeit
 - Streak-Anzeige für regelmäßiges Lernen
 
-### 🔁 Wiederholungen
+### Wiederholungen
 - Spaced Repetition: optimale Wiederholungsintervalle
 - Confidence-Rating nach jeder Session
 
-### 🔔 Microlearning & Benachrichtigungen
+### Microlearning & Benachrichtigungen
 - Kurze 5–15 min Sessions für Pausen oder Pendeln
 - Smarte Push-Notifications (nicht während anderer Termine)
 
-### 🎨 UI & Komfort
+### UI & Komfort
 - Dark Mode & Light Mode
 - Offline-Modus mit automatischer Synchronisation
 - Individuelle Farbgebung
 
 ---
 
-## 👥 Zielgruppen
+## Zielgruppen
 
 | Persona | Beschreibung |
 |---|---|
-| 🎓 Studenten | Prüfungsvorbereitung mit mehreren Fächern gleichzeitig |
-| 📖 Lektoren | Strukturiertes Lernen und Wiederholungsmanagement |
-| 💻 Programmierer | Weiterbildung neben dem Job, kleine Lerneinheiten |
+| Studenten | Prüfungsvorbereitung mit mehreren Fächern gleichzeitig |
+| Lektoren | Strukturiertes Lernen und Wiederholungsmanagement |
+| Programmierer | Weiterbildung neben dem Job, kleine Lerneinheiten |
 
 ---
 
-## 🗂️ User Stories (GitHub Issues)
+## User Stories (GitHub Issues)
 
 Alle User Stories sind als GitHub Issues im Repository angelegt:
 
@@ -87,7 +87,7 @@ Alle User Stories sind als GitHub Issues im Repository angelegt:
 
 ---
 
-## 🏗️ Projektstruktur
+## Projektstruktur
 
 ```
 studysync/
@@ -106,7 +106,7 @@ studysync/
 
 ---
 
-## 🚀 Roadmap
+## Roadmap
 
 ### Phase 1 — MVP (aktuell)
 - [x] Kalenderintegration
@@ -127,7 +127,7 @@ studysync/
 
 ---
 
-## 👨‍💻 Team
+## Team
 
 | GitHub | Rolle |
 |---|---|
@@ -138,6 +138,6 @@ studysync/
 
 ---
 
-## 📄 Lizenz
+## Lizenz
 
 Dieses Projekt entsteht im Rahmen eines Schulprojekts.
