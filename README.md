@@ -53,7 +53,7 @@ StudySync ist eine Lern-App, die deinen Kalender analysiert und automatisch opti
 |---|---|
 | Studenten | Prüfungsvorbereitung mit mehreren Fächern gleichzeitig |
 | Lektoren | Strukturiertes Lernen und Wiederholungsmanagement |
-| Programmierer | Weiterbildung neben dem Job, kleine Lerneinheiten |
+| - Weiterbildung neben dem Job, kleine Lerneinheiten |
 
 ---
 
@@ -131,10 +131,13 @@ studysync/
 
 | GitHub | Rolle |
 |---|---|
-| @yungreindl | Entwicklung, Kalender & Offline |
-| @JonasSTD | Entwicklung, Lernplanung & Personas |
-| @Jana816 | UI/UX, Farben & Kalender |
-| @Cora44 | Entwicklung, Fortschritt & Aufgaben |
+| @yungreindl | Developer |
+| @JonasSTD | Developer |
+| @Jana816 | Developer |
+| @Cora44 | Developer |
+| @firstfi | Scrammaster |
+| @maximilianpapst160-spec | Product-Owner |
+
 
 ---
 
