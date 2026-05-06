@@ -136,7 +136,7 @@ studysync/
 | @Jana816 | Developer |
 | @Cora44 | Dveloper |
 | @firstfi | Scrammaster |
-| @maximilianpapst160-spec | Product-Owner (versteht leider garnichts) |
+| @maximilianpapst160-spec | Product-Owner |
 
 
 ---
