@@ -63,9 +63,9 @@ Alle User Stories sind als GitHub Issues im Repository angelegt:
 
 | # | Titel | Epic |
 |---|---|---|
-| #6 | User Story Studenten | Intelligente Lernplanung |
-| #7 | User Story Lektoren | Intelligente Lernplanung |
-| #9 | User Story Programmierer | Intelligente Lernplanung |
+| #6 | User Story Studenten | Intelligente Lernplanung |P0
+| #7 | User Story Lektoren | Intelligente Lernplanung | P0
+| #9 | User Story Programmierer | Intelligente Lernplanung | P0
 | #10 | UserStory Einkaufen | Infotracker |
 | #11 | User Story Dark Mode | Dark und Light Mode |
 | #12 | User Story Offline-Mode | Offline Modus |
@@ -77,9 +77,9 @@ Alle User Stories sind als GitHub Issues im Repository angelegt:
 | #18 | User Story Kalendervernüpfung | Kalenderfeature |
 | #19 | User Story Microlearning & Benachrichtigungen | Intelligente Lernplanung |
 | #20 | User Story Wiederholungen | Intelligente Lernplanung |
-| #21 | User story Übersicht | Infotracker |
-| #22 | User Story Dauer | Aufgabenmanagement |
-| #23 | User Story Bearbeitung | Kalenderfeature |
+| #21 | User story Übersicht | Infotracker | P0
+| #22 | User Story Dauer | Aufgabenmanagement | P0
+| #23 | User Story Bearbeitung | Kalenderfeature |P0
 | #24 | User Story Umstrukturierung | Aufgabenmanagement |
 | #26 | User Story bereits erledigte Aufgaben | Infotracker |
 | #27 | User Story Wochenrecap | Infotracker |
