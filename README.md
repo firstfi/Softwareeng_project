@@ -134,7 +134,7 @@ studysync/
 | @yungreindl | Developer |
 | @JonasSTD | Developer |
 | @Jana816 | Developer |
-| @Cora44 | Dickveloper |
+| @Cora44 | Dveloper |
 | @firstfi | Scrammaster |
 | @maximilianpapst160-spec | Product-Owner |
 
