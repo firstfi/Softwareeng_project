@@ -1,6 +1,106 @@
 from turtle import color
-
+import time
+import datetime
+from datetime import datetime
+import hashlib
+import sqlite3
 import streamlit as st
+
+#Datenbank 
+
+
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+
+def init_db():
+    conn = sqlite3.connect("users.db")
+    c = conn.cursor()
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE,
+            password TEXT
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+
+def register_user(username, password):
+    conn = sqlite3.connect("users.db")
+    c = conn.cursor()
+
+    try:
+        c.execute(
+            "INSERT INTO users (username, password) VALUES (?, ?)",
+            (username, hash_password(password))
+        )
+        conn.commit()
+        return True
+    except sqlite3.IntegrityError:
+        return False
+    finally:
+        conn.close()
+
+
+def login_user(username, password):
+    conn = sqlite3.connect("users.db")
+    c = conn.cursor()
+
+    c.execute(
+        "SELECT * FROM users WHERE username = ? AND password = ?",
+        (username, hash_password(password))
+    )
+
+    user = c.fetchone()
+    conn.close()
+
+    return user is not None
+
+
+init_db()
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+if "username" not in st.session_state:
+    st.session_state.username = ""
+
+
+
+    tab1, tab2 = st.tabs(["Login", "Registrieren"])
+
+    with tab1:
+        username = st.text_input("Benutzername", key="login_username")
+        password = st.text_input("Passwort", type="password", key="login_password")
+
+        if st.button("Einloggen"):
+            if login_user(username, password):
+                st.session_state.logged_in = True
+                st.session_state.username = username
+                st.rerun()
+            else:
+                st.error("Benutzername oder Passwort falsch.")
+
+    with tab2:
+        new_username = st.text_input("Neuer Benutzername", key="register_username")
+        new_password = st.text_input("Neues Passwort", type="password", key="register_password")
+
+        if st.button("Registrieren"):
+            if new_username.strip() and new_password.strip():
+                success = register_user(new_username, new_password)
+
+                if success:
+                    st.success("Account erstellt. Du kannst dich jetzt einloggen.")
+                else:
+                    st.warning("Benutzername existiert bereits.")
+            else:
+                st.warning("Bitte alles ausfüllen.")
+
+
+
+
 
 st.set_page_config(
     page_title="StudyFlow - Dein Lerntracker",
@@ -195,31 +295,55 @@ with col2:
         unsafe_allow_html=True
     )
 
+if "lernziele" not in st.session_state:
+    st.session_state.lernziele = []
+
+fach = st.text_input(
+    "Lernfach",
+    placeholder="z.B. Mathematik, Python, Geschichte ..."
+)
+
+zeit = st.text_input(
+    "Lernzeit",
+    placeholder="Wie lange möchtest du lernen? z.B. 30 Minuten"
+)
 
 st.markdown(
-    """
+    f"""
     <div class="card">
-        <h2>Neues Lernfach</h2>
+        <h2>Fach: {fach}</h2>
         <p class="muted">
-            Trage ein Fach ein, das du heute lernen möchtest.
+            Lernzeit: {zeit}
         </p>
     </div>
     """,
     unsafe_allow_html=True
 )
 
-fach = st.text_input(
-    "",
-    placeholder="z.B. Mathematik, Python, Geschichte ..."
-)
-
-eit = st.text_input(
-    "",
-    placeholder="Wie lange möchtest du lernen? (z.B. 30 Minuten, 1 Stunde ...)"
-)
-
 if st.button("Lernziel speichern"):
-    if fach.strip():
-        st.success(f"Dein Lernfach '{fach}' wurde gespeichert!")
+    if fach.strip() and zeit.strip():
+        st.session_state.lernziele.append({
+            "fach": fach,
+            "zeit": zeit
+        })
+        st.success("Lernziel wurde gespeichert!")
     else:
-        st.warning("Bitte gib zuerst ein Fach ein.")
+        st.warning("Bitte gib ein Fach und eine Lernzeit ein.")
+
+
+
+if st.session_state.lernziele:
+    st.markdown("## Gespeicherte Lernziele")
+
+    for ziel in st.session_state.lernziele:
+        st.markdown(
+            f"""
+            <div class="card">
+                <h2>Fach: {ziel["fach"]}</h2>
+                <p class="muted">Lernzeit: {ziel["zeit"]}</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
